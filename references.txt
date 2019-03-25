@@ -1,0 +1,8 @@
+references:
+
+css style
+https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+https://gist.github.com/hellt/bc4fc51d6f1b9584605517f5c8d6a5a0
+
+jQuery:
+https://code.jquery.com/jquery-3.3.1.js

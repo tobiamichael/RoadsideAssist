@@ -1,0 +1,46 @@
+<!DOCTYPE HTML>
+<HTML lang="en-US">
+
+	<head> 
+		<title>snitch | Login </title>
+		<link rel="icon" href="{{ url_for('static', filename='css/images/icon.png')}}">
+		<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/accounts.css')}}">
+	</head>
+
+	<body> 
+<! Header>
+		<div class="header"> 
+			<div class="create"> <p class="create"><a href="create"> Create Account </a></p> </div>
+			<div id="break"> <p> | </p>  </div>
+			<div class="login"> <p class="login"><a href="login"> Login </a></p> </div>
+		</div>
+		
+		<div class="logo"><img src= "{{ url_for('static', filename='css/images/AccountsLogo.png')}}" alt="snitch logo" width="300" height="176"></div>
+			
+<! Login Form>
+			<div class="login-container">
+				<form class="userform" action="" method="post" novalidate>
+					{{ form.hidden_tag() }}
+					<div id="loginpgusername">
+							{{ form.username(class_="login-input", placeholder="Username", autofocus="autofocus") }}
+					</div>
+					
+					<div id="loginpgpassword">
+							{{ form.password(class_="login-input", placeholder="Password", autofocus="autofocus" ) }}
+						<div id="button">
+								{{ form.submit(class_="login-button") }}
+						</div>
+					</div>
+			</div>
+<! New User? Link>				
+				<div id="newuser">
+					<p class="new-user"><a href="create"> New User?</a></p>
+				</div>
+				</form>
+				
+<! Footer tag>
+		<p4> by Integrity Systems </p4>
+	
+	</body>
+</html>
+

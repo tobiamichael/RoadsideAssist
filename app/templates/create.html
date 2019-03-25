@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<HTML lang="en-US">
+
+	<head> 
+		<title>snitch | Create Account </title>
+		<link rel="icon" href="{{ url_for('static', filename='css/images/icon.png')}}">
+			<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='css/accounts.css')}}">
+	</head>
+
+	<body> 
+<! Header>	
+		<div class="header"> 
+			<div class="create"><p class="create"><a href="create"> Create Account </a></p></div>
+			<div id="break"><p> | </p></div>
+			<div class="login"> <p class="login"><a href="login"> Login </a></p></div>
+		</div>
+
+<! Logo page title>
+		<div class="logo">
+			<img src= "{{ url_for('static', filename='css/images/AccountsLogo.png')}}" alt="snitch logo" width="300" height="176"></div>
+		<div id="title"> <h3>Create Account</h3> </div>	
+
+<! Create account form>
+		<div class="create-container">
+			<form class="userform" action="" method="post">
+				{{ form.hidden_tag() }}
+    			<div id="username">
+						{{ form.username(class_="login-input", placeholder="Username", autofocus="autofocus") }}
+				</div>
+				<div id = "password">
+						{{ form.password(class_="login-input", placeholder="Password") }}
+				</div>
+				<div id="email">
+					{{ form.email(class_="login-input", placeholder="Email", autofocus="autofocus") }}<br><br>
+					{% for error in form.email.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+					<br>
+					{% for error in form.username.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</div>
+				<div id="c-password">
+						{{ form.password2(class_="login-input", placeholder="Confirm password") }}
+					<div id="button">
+							{{ form.submit(class_="login-button") }}
+					</div>
+					{% for error in form.password.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+					<br>
+					{% for error in form.password2.errors %}
+					<span style="color: red;">[{{ error }}]</span>
+					{% endfor %}
+				</div>
+				
+		</div>
+
+<! Footer tag>					
+		<p4> by Integrity Systems </p4>
+
+	</body>
+</html>
