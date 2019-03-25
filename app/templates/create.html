@@ -22,7 +22,7 @@
 						{{ form.password(class_="login-input", placeholder="Password") }}
 				</div>
 				<div id="email">
-					{{ form.email(class_="login-input", placeholder="Email", autofocus="autofocus") }}<br><br>
+					{{ form.email(class_="login-input", placeholder="Email", autofocus="autofocus") }}
 					{% for error in form.email.errors %}
 					<span style="color: red;">[{{ error }}]</span>
 					{% endfor %}
