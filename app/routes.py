@@ -51,39 +51,7 @@ def create():
 @app.route('/userpage', methods=['GET', 'POST'])
 @login_required
 def userpage():
-	
-	# docs list
-    docs = []
-    userDocs = current_user.documents.all()
-    for index, d in enumerate(userDocs):
-        docs.append("document%s" % str(index+1) + ".txt")
-
-    documentContent = []
-    for d in userDocs:
-        documentContent.append(" ".join(d.text.split()))
-
-    print(documentContent)
-    form = DocumentForm()
-    if form.validate_on_submit():
-        document = Document(text=form.document.data, author=current_user)
-        db.session.add(document)
-        db.session.commit()
-        flash('Document submitted!')
-		# process document most recently submitted in database
-        text = document.text
-        urls = checkPlagiarism(text)
-        print(urls)
-        # if checking in spanish as well
-        if form.spanish.data:
-            translation = translateToSpanish(text)
-            urlsSpanish = checkPlagiarism(translation)
-            print(urlsSpanish)
-            #add to url list
-            for url in urlsSpanish:
-                urls.append(url)
-        # use javascript to display urls
-        return render_template('userpage_results.html', docs=docs, documentContent=documentContent, urls=urls)
-    return render_template('userpage.html', form=form, docs=docs, documentContent=documentContent)
+    return render_template('userpage.html')
 
 
 @app.route('/logout')
