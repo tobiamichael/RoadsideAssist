@@ -7,9 +7,6 @@ from app.forms import LoginForm, RegistrationForm
 from app.models import User
 from app.forms import DocumentForm
 from app.models import Document
-from app.plagiarism.ExampleSynchronous import checkPlagiarism
-from googletrans import Translator
-from app.translate import translateToSpanish
 import html
 
 
